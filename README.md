@@ -93,7 +93,7 @@ Perform the request
 response = api.get(endpoint, parameters)
 ```
 
-Do something with your results
+Do something with the response data
 
 ```
 print(response)
