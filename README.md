@@ -39,7 +39,7 @@ git clone https://github.com/rbcummings/sentinelone-py.git
 Import the module into your script
 
 ```
-import sentinelone-py.sentinelone as sentinelOne
+import sentinelone-py.sentinelone as sentinelone
 ```
 
 ### Authenticating with the SentinelOne API
@@ -47,7 +47,7 @@ import sentinelone-py.sentinelone as sentinelOne
 Authenticate with the SentinelOne API using an API key
 
 ```
-api = sentinelOne(
+api = sentinelone.api(
     'your-subdomain',
     {'apiKey':'your-apikey'},
     ['your-siteid-1', 'your-siteid-2]
@@ -57,7 +57,7 @@ api = sentinelOne(
 Authenticate with the SentinelOne API using your username and password
 
 ```
-api = sentinelOne(
+api = sentinelone.api(
     'your-subdomain',
     {'username':'your-username', 'password':'your-password'},
     ['your-siteid-1', 'your-siteid-2]

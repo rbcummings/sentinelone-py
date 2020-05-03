@@ -21,7 +21,7 @@ __status__     = 'Production'
 
 import requests, json
 
-class sentinelOne():
+class api():
     """
     A class used to represent the SentinelOne API
 
