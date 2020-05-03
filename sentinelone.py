@@ -8,7 +8,7 @@
 #         \/            \/     \/      \/         \/        \/            \/    \/
 #                              DreamInCode.io
 
-"""A Python class for easily interacting with the SentinelOne API."""
+"""A Python class that provides methods for easily interacting with the SentinelOne API"""
 
 __author__     = 'Brandon Cummings'
 __copyright__  = 'Copyright 2020, Brandon Cummings'

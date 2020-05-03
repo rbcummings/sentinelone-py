@@ -1,5 +1,5 @@
 # SentinelOnePy
-A class that provides methods for easily interacting with the SentinelOne API.
+A Python class that provides methods for easily interacting with the SentinelOne API.
 
 ## Getting Started
 
