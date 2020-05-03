@@ -47,24 +47,36 @@ import sentinelone-py.sentinelone as sentinelOne
 Authenticate with the SentinelOne API using an API key
 
 ```
-sentinelOne = sentinelOne('your-subdomain', {'apiKey':'your-apikey'}, ['your-siteid-1', 'your-siteid-2])
+api = sentinelOne(
+    'your-subdomain',
+    {'apiKey':'your-apikey'},
+    ['your-siteid-1', 'your-siteid-2]
+)
 ```
 
 Authenticate with the SentinelOne API using your username and password
 
 ```
-sentinelOne = sentinelOne('your-subdomain', {'username':'your-username', 'password':'your-password'}, ['your-siteid-1', 'your-siteid-2])
+api = sentinelOne(
+    'your-subdomain',
+    {'username':'your-username', 'password':'your-password'},
+    ['your-siteid-1', 'your-siteid-2]
+)
 ```
 
 ### Performing a request to the SentinelOne API
 
 This example will return data for up to 1000 threats created from `February 1st, 2020` through `February 29th, 2020`, sorted by field `createdAt`, order `asc`.
 
-```
-# Define the endpoint to which your requests should be made
-endpoint = '/web/api/v2.0/threats'
+Define the endpoint to which your requests should be made
 
-# Set the parameters for your request
+```
+endpoint = '/web/api/v2.0/threats'
+```
+
+Set the parameters for your request
+
+```
 parameters = {
     'createdAt__gte': '2020-02-01T00:00:00.000000Z',
     'createdAt__lte': '2020-02-29T23:59:59.999999Z',
@@ -73,10 +85,20 @@ parameters = {
     'countOnly': 'false',
     'limit': 1000,
 }
-
-# Perform the request
-results = sentinelOne.get(endpoint, parameters)
-
-# Do something with your results
-print(results)
 ```
+
+Perform the request
+
+```
+response = api.get(endpoint, parameters)
+```
+
+Do something with your results
+
+```
+print(response)
+```
+
+There are also methods for `POST` and `PUT` requests; `api.post()` and `api.put()`. Both of these methods allow an optional third parameter, `body`, to be included with your request which should also be type `dict`.
+
+See docstring comments in `sentinelone.py` for detailed information on parameters for these methods.
