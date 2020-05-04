@@ -16,7 +16,7 @@ __credits__    = ['Brandon Cummings']
 __license__    = 'MIT'
 __version__    = '1.0.0'
 __maintainer__ = 'Brandon Cummings'
-__email__      = 'brandon@dreamincode.io'
+__email__      = 'Brandon@DreamInCode.io'
 __status__     = 'Production'
 
 import requests, json
@@ -77,7 +77,7 @@ class api():
                 'username': self.credentials['username'],
                 'password': self.credentials['password'],
             }
-            response = requests.post(self.request_url('/web/api/v2.0/users/login/by-api-token'), body = None, json = parameters)
+            response = requests.post(self.request_url('/web/api/v2.0/users/login'), json = parameters)
 
         response = response.json()
 
