@@ -46,7 +46,7 @@ class api():
         Performs a PUT request using the specified endpoint, parameters and body
     """
 
-    def __init__(self, subdomain, credentials, site_ids = None):
+    def __init__(self, subdomain, credentials, site_ids = None, api_version = '2.1'):
         """Define the basics for API interaction and authenticate with the API
 
         Parameters
@@ -63,6 +63,7 @@ class api():
         self.subdomain = subdomain
         self.credentials = credentials
         self.site_ids = site_ids
+        self.api_version = api_version
         self.headers = None
 
         if 'apiKey' in credentials.keys():
@@ -71,13 +72,13 @@ class api():
                     'apiToken': self.credentials['apiKey'],
                 },
             }
-            response = requests.post(self.request_url('/web/api/v2.0/users/login/by-api-token'), json = parameters)
+            response = requests.post(self.request_url('/web/api/v'+api_version+'/users/login/by-api-token'), json = parameters)
         else:
             parameters = {
                 'username': self.credentials['username'],
                 'password': self.credentials['password'],
             }
-            response = requests.post(self.request_url('/web/api/v2.0/users/login'), json = parameters)
+            response = requests.post(self.request_url('/web/api/v'+api_version+'/users/login'), json = parameters)
 
         response = response.json()
 
